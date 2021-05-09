@@ -1,0 +1,86 @@
+@api = http://localhost:4000
+
+POST {{api}}/schools
+Content-Type: application/json
+
+{
+    "school": "EAC",
+    "isActivated": true,
+    "usersTeacher": {
+        "teachersData": [{
+            "username": "123-123@dlsud.edu.ph",
+            "password": "123456789",
+            "mobileNumber": "91231212111",
+            "name": {
+                "firstName": "Mark",
+                "middleInitial": "L.",
+                "surName": "Del Mundo"
+            },
+            "createdAt": "Sun, 09 May 2021 00:06:18 GMT",
+            "updatedAt": "Sun, 09 May 2021 00:06:18 GMT"
+        }],
+        "usersLimit": 2
+    },
+    "usersLearner": {
+        "learnersData": [{
+            "username": "2342-2323@dlsud.edu.ph",
+            "password": "123456789asdd",
+            "mobileNumber": "91231212113",
+            "name": {
+                "firstName": "Angela",
+                "middleInitial": "X.",
+                "surName": "Rhodora"
+            },
+            "createdAt": "Sun, 09 May 2021 00:06:18 GMT",
+            "updatedAt": "Sun, 09 May 2021 00:06:18 GMT"
+        }],
+        "usersLimit": 45
+    }
+}
+
+###
+GET {{api}}/schools
+
+###
+GET  {{api}}/schools/60972947f8875b07f4e10c09
+
+###
+PUT {{api}}/schools/60972947f8875b07f4e10c09
+Content-Type: application/json
+
+{
+    "school": "PNU"
+}
+
+###
+DELETE {{api}}/schools/609727ddea701b1564ddbf3c
+
+###
+PUT  {{api}}/EAC/teachers
+Content-Type: application/json
+
+{
+    "username": "4143-4223@dlsud.edu.ph",
+    "password": "98213123",
+    "mobileNumber": "90647345681",
+    "name": {
+        "firstName": "Junior",
+        "middleInitial": "G.",
+        "surName": "Bato"
+    },
+    "createdAt": "Mon, 09 May 2021 00:06:18 GMT",
+    "updatedAt": "Mon, 09 May 2021 00:06:18 GMT"
+}
+
+###
+GET  {{api}}/EAC/teachers
+
+###
+GET  {{api}}/EAC/teachers/123-123@dlsud.edu.ph
+
+###
+PUT  {{api}}/eac/teachers/1
+
+###
+DELETE   {{api}}/eac/teachers/1
+
